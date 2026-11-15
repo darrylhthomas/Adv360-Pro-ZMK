@@ -35,7 +35,7 @@
         input-processors = <&zip_xy_scaler 12 1>;
     };
 };
-
+/*
 &msc_input_listener {
     LAYER_mouse_slow {
         layers = <LAYER_mouse_slow>;
@@ -50,7 +50,7 @@
         input-processors = <&zip_scroll_scaler 12 1>;
     };
 };
-
+*/
 / {
     behaviors {
         #include "macros.dtsi"
