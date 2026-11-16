@@ -21,6 +21,7 @@
 #define LAYER_symbol 8
 
 /* Input Listeners */
+/*
 &mmv_input_listener {
     LAYER_mouse_slow {
         layers = <LAYER_mouse_slow>;
@@ -35,6 +36,7 @@
         input-processors = <&zip_xy_scaler 12 1>;
     };
 };
+*/
 /*
 &msc_input_listener {
     LAYER_mouse_slow {
@@ -88,17 +90,17 @@
 
     macros {
         vo: vo {
+            label = "&VO";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL &kp LALT>,
-                <&macro_pause_for_release>,
-                <&macro_release>;
+            bindings = <&macro_press>
+                , <&kp LCTRL>
+                , <&kp LALT>
+                , <&macro_pause_for_release>
+                , <&macro_release>
+                , <&kp LCTRL>
+                , <&kp LALT>;
 
-            label = "VO";
-            tap-ms = <30>;
-            wait-ms = <15>;
         };
     };
 
@@ -112,7 +114,7 @@
 &kp TAB          &kp Q        &kp W      &kp E     &kp R      &lt 1 T  &none                                                                    &none        &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
 &kp ESC          &kp A        &kp S      &kp D     &kp F      &kp G    &none     &kp LCTRL  &kp LALT             &kp RCTRL       &kp RGUI       &none        &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
 &mt LSHFT GRAVE  &kp Z        &kp X      &kp C     &kp V      &kp B                         &mt LCTRL HOME       &mt RALT PG_UP                              &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-&mo 2            &mvo 0 HOME  &lt 4 END  &kp LEFT  &kp RIGHT           &kp BSPC  &kp DEL    &lt 8 PAGE_DOWN      &lt 1 PG_DN     &mt RCTRL RET  &lt 8 SPACE          &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &mo 2
+&mo 2            &mvo 0 HOME  &mo 4      &kp LEFT  &kp RIGHT           &kp BSPC  &kp DEL    &lt 8 PAGE_DOWN      &lt 1 PG_DN     &mt RCTRL RET  &lt 8 SPACE          &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &mo 2
             >;
         };
 
